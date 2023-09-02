@@ -3,13 +3,13 @@ kind: ReplicaSet
 metadata: 
   name: frontend-rs
   labels:
-    name: frontend
+    type: frontend
 spec: 
   template:
     metadata:
       name: nginx-pod
       labels:
-        name: frontend
+        type: frontend
     spec:
       containers:
       - name: myapp
