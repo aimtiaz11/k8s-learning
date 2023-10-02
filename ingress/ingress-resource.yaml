@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: watch-wear-resource
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+   rules:
+    - http:
+        paths:
+        - pathType: Prefix
+          path: "/watch"
+          backend:
+            service:
+              name: video-service
+              port: 
+                number: 8080
+        - pathType: Prefix
+          path: "/wear"
+          backend:
+            service:
+              name: wear-service
+              port: 
+                number: 8080
