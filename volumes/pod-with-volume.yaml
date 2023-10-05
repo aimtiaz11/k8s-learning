@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  containers:
+  - image: nginx:1.7.9
+    name: test
+    volumeMounts:
+    - mountPath: /pod/in/pod
+      name: test-volume
+  volumes:
+  - name: test-volume
+    hostPath:
+      path: /path/to/node
+      type: DirectoryOrCreate
