@@ -7,10 +7,10 @@ spec:
   - image: nginx:1.7.9
     name: test
     volumeMounts:
-    - mountPath: /pod/in/pod
+    - mountPath: /path/in/pod
       name: test-volume
   volumes:
   - name: test-volume
     hostPath:
-      path: /path/to/node
+      path: /path/in/node
       type: DirectoryOrCreate
